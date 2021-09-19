@@ -13,8 +13,7 @@ mongoose.connect("mongodb://localhost:27017/UserDatabase");
  });
 
 
-var encKey = "Thisisourlittlesecret";
-var sigKey = "Mynameiswenkai";
+
 UserSchema.plugin(encrypt, { secret:process.env.SECRET,encryptedFields:["password"] });
 const User  = new mongoose.model("user",UserSchema);
 
